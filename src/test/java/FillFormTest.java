@@ -11,10 +11,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class FillFormTest {
 
     private static WebDriver driver;
+    private final String APP_URL = "http://www.automationpractice.pl/index.php";
     @Test
     void shouldFillFormWithPass()
     {
         driver = getDriver();
+        driver.get(APP_URL);
     }
 
     @Test
