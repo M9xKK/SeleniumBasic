@@ -1,3 +1,5 @@
+import dev.failsafe.internal.util.Assert;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -11,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FillFormTest {
 
@@ -42,10 +46,21 @@ public class FillFormTest {
         subjectHeading_dropDownList.sendKeys("Customer service");
 
         WebElement fileUpload_Input = driver.findElement(By.cssSelector("#fileUpload"));
-        fileUpload_Input.sendKeys("src/resources/test.txt");
+        fileUpload_Input.sendKeys("C:\\Users\\magda\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
+
+        WebElement submitMessage_Button = driver.findElement(By.cssSelector("#submitMessage"));
+        submitMessage_Button.click();
+
+        String expectedMessage = "Your message has been successfully sent to our team.";
+
+        WebElement successfulMessage = driver.findElement(By.cssSelector(".alert-success"));
+        String actualMessage = successfulMessage.getText();
+
+        assertThat(actualMessage).isEqualTo(expectedMessage);
 
 //        driver.quit();
     }
+
 
     @Test
     void shouldFillFormWithFail()
