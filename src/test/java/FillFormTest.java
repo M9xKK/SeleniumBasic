@@ -1,12 +1,16 @@
 import org.junit.jupiter.api.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+
+import java.time.Duration;
 
 public class FillFormTest {
 
@@ -17,6 +21,30 @@ public class FillFormTest {
     {
         driver = getDriver();
         driver.get(APP_URL);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        WebElement contactUs_Link = driver.findElement(By.cssSelector("#contact-link>a"));
+        contactUs_Link.click();
+
+        WebElement emailAddress_Input = driver.findElement(By.cssSelector("input#email"));
+        emailAddress_Input.clear();
+        emailAddress_Input.sendKeys("EmailAddress@o2.pl");
+
+        WebElement orderReference_Input = driver.findElement(By.cssSelector("input#id_order"));
+        orderReference_Input.clear();
+        orderReference_Input.sendKeys("123123");
+
+        WebElement message_TextArea = driver.findElement(By.cssSelector("textarea#message"));
+        message_TextArea.clear();
+        message_TextArea.sendKeys("Some really long message that i wanted to send. \n Next line of this message \n another line \n ps. goodbye");
+
+        WebElement subjectHeading_dropDownList = driver.findElement(By.cssSelector("select#id_contact"));
+        subjectHeading_dropDownList.sendKeys("Customer service");
+
+        WebElement fileUpload_Input = driver.findElement(By.cssSelector("#fileUpload"));
+        fileUpload_Input.sendKeys("src/resources/test.txt");
+
+//        driver.quit();
     }
 
     @Test
@@ -35,7 +63,7 @@ public class FillFormTest {
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 chromeOptions.addArguments("--disable-search-engine-choice-screen");
-                chromeOptions.addArguments("--headless");
+//                chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
             }
             case "firefox" -> {
