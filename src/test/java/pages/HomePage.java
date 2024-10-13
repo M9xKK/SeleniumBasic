@@ -1,7 +1,9 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +12,10 @@ public class HomePage {
     @FindBy(css="#contact-link>a")
     WebElement contactUs_Link;  //To samo co ponizej ogarniete przez FindBy
 //    WebElement contactUs_Link = driver.findElement(By.cssSelector("#contact-link>a"));
+
+    public HomePage(WebDriver driver){
+        PageFactory.initElements(driver,this);
+    }
 
     public HomePage cotanctUsClick(){
         contactUs_Link.click();

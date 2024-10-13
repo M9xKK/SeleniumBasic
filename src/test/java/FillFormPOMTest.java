@@ -16,9 +16,9 @@ public class FillFormPOMTest extends BaseTest {
     void shouldSendFormWithPOM()
     {
 
-        HomePage homePage = new HomePage();
-        ContactUsPage contactUsPage = new ContactUsPage();
-        CotanctUsVerificationPage contactUsVerificationPage = new CotanctUsVerificationPage();
+        HomePage homePage = new HomePage(driver);
+        ContactUsPage contactUsPage = new ContactUsPage(driver);
+        CotanctUsVerificationPage contactUsVerificationPage = new CotanctUsVerificationPage(driver);
 
         homePage.cotanctUsClick();
         contactUsPage.enterMessageInTextArea("Some really long text \n with many lines \n thanks!");
