@@ -36,3 +36,4 @@ public class FillFormPOMTest extends BaseTest {
         //dodac zmienne zamiast danych przekazanych bezposrednio do metod.
     }
 }
+
