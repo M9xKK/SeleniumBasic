@@ -3,13 +3,17 @@ package base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,13 +25,18 @@ public class BaseWebTableTest {
     private final String APP_URL = "https://cosmocode.io/automation-practice-webtable/";
     private Logger logger = LoggerFactory.getLogger(BaseWebTableTest.class);
 
+    Wait<WebDriver> wait = new FluentWait<>(driver)
+            .withTimeout(Duration.ofSeconds(10))
+            .pollingEvery(Duration.ofSeconds(1))
+            .ignoring(NoSuchElementException.class);
+
     @BeforeEach
     void setup() {
         driver = getDriver();
         driver.get(APP_URL);
         logger.info("URL defined properly");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        logger.info("Timeout set properly to 5 seconds");
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        logger.info("Timeout set properly to 5 seconds"); bedziemy korzystac z fluent waita
     }
 
     @AfterEach

@@ -40,8 +40,10 @@ public class WebTableSimpleTest extends BaseWebTableTest {
         int indexOfCountry = rowCount + 1;
         logger.info("Row number: " + (rowCount+1) + " For country " + country);
 
+        navigateToElement(rows.get(indexOfCountry+5));
+
         WebElement capitalOfCountry = driver.findElement(By.cssSelector("#countries>tbody>tr:nth-child("+indexOfCountry+")>td:nth-child(3)"));
-        navigateToElement(capitalOfCountry);
+//        navigateToElement(capitalOfCountry);
 
         logger.info("Capital of " +country+ " is " + capitalOfCountry.getText());
         return capitalOfCountry.getText();
