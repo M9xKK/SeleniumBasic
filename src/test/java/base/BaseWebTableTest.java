@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BaseWebTableTest {
     private final String browserName = "chrome";
@@ -103,5 +104,13 @@ public class BaseWebTableTest {
     protected void clickCheckbox(WebElement element)
     {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+        logger.info("Element "+element.getText() + " is clicked");
+    }
+
+    protected WebElement findCheckbox(List<WebElement> elementsList, int index)
+    {
+        WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(elementsList.get(index)));
+        logger.info("Number of elements: "+elementsList.size() + " are registered");
+        return checkbox;
     }
 }
