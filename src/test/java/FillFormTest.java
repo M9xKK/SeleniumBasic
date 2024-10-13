@@ -102,16 +102,16 @@ public class FillFormTest {
                 driver = new ChromeDriver(chromeOptions);
                 logger.info("Chromer driver initialized properly");
             }
-            case "chromium" -> {
-                ChromiumOptions chromiumOptions = new ChromiumOptions();
-                WebDriverManager.chromiumdriver().setup();
-                chromiumOptions.addArguments("--start-maximized");
-                chromiumOptions.addArguments("--remote-allow-origins=*");
-                chromiumOptions.addArguments("--disable-search-engine-choice-screen");
-                chromiumOptions.addArguments("--headless");
-                driver = new ChromiumDriver(chromiumOptions);
-                logger.info("Chromer driver initialized properly");
-            }
+//            case "chromium" -> {
+//                ChromiumOptions chromiumOptions = new ChromiumOptions();
+//                WebDriverManager.chromiumdriver().setup();
+//                chromiumOptions.addArguments("--start-maximized");
+//                chromiumOptions.addArguments("--remote-allow-origins=*");
+//                chromiumOptions.addArguments("--disable-search-engine-choice-screen");
+//                chromiumOptions.addArguments("--headless");
+//                driver = new ChromiumDriver(chromiumOptions);
+//                logger.info("Chromer driver initialized properly");
+//            }
             case "firefox" -> {
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 WebDriverManager.firefoxdriver().setup();
