@@ -12,6 +12,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.slf4j.Logger;
@@ -96,5 +98,10 @@ public class BaseWebTableTest {
             }
         }
         return driver;
+    }
+
+    protected void clickCheckbox(WebElement element)
+    {
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 }
