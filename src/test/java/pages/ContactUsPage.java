@@ -15,7 +15,7 @@ public class ContactUsPage {
     @FindBy(css="id_contact")
     WebElement subjectHeading_dropDownLis;
 
-    @FindBy(css="input#Email")
+    @FindBy(css="input#email")
     WebElement emailAddress_Input;
 
     @FindBy(css="input#id_order")
