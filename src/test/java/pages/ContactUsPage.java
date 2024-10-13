@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 public class ContactUsPage {
     private Logger logger = LoggerFactory.getLogger(ContactUsPage.class);
 
-    @FindBy(css="id_contact")
+    @FindBy(css="select#id_contact")
     WebElement subjectHeading_dropDownLis;
 
     @FindBy(css="input#email")
