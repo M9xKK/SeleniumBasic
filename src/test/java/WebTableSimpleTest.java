@@ -49,6 +49,20 @@ public class WebTableSimpleTest extends BaseWebTableTest {
         return capitalOfCountry.getText();
     }
 
+    @Test
+    @DisplayName("Should find and select checkbox")
+    void shouldSelectCheckbox()
+    {
+        //Check poland checkbox
+        List<WebElement> checkboxes = driver.findElements(By.cssSelector(".hasVisited[type='checkbox']"));
+        //Here we might use previously created method for selecting specific element based on its name
+        WebElement checkbox = findCheckbox(checkboxes, 139);
+        navigateToElement(checkboxes.get(145));
+        clickCheckbox(checkbox);
+
+        assertThat(checkbox.isSelected()).isTrue();
+    }
+
     private void navigateToElement(WebElement element){
         new Actions(driver).scrollToElement(element).perform();
         logger.info("Scroll to the element");
