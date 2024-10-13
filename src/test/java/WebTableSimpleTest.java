@@ -3,6 +3,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +41,15 @@ public class WebTableSimpleTest extends BaseWebTableTest {
         logger.info("Row number: " + (rowCount+1) + " For country " + country);
 
         WebElement capitalOfCountry = driver.findElement(By.cssSelector("#countries>tbody>tr:nth-child("+indexOfCountry+")>td:nth-child(3)"));
+        navigateToElement(capitalOfCountry);
+
         logger.info("Capital of " +country+ " is " + capitalOfCountry.getText());
         return capitalOfCountry.getText();
     }
+
+    private void navigateToElement(WebElement element){
+        new Actions(driver).scrollToElement(element).perform();
+        logger.info("Scroll to the element");
+    }
+
 }
