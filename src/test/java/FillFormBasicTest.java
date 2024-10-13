@@ -1,5 +1,3 @@
-import dev.failsafe.internal.util.Assert;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -7,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chromium.ChromiumDriver;
-import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,11 +16,11 @@ import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FillFormTest {
+public class FillFormBasicTest {
 
     private static WebDriver driver;
     private final String APP_URL = "http://www.automationpractice.pl/index.php";
-    private Logger logger = LoggerFactory.getLogger(FillFormTest.class);
+    private Logger logger = LoggerFactory.getLogger(FillFormBasicTest.class);
 
     @Test
     void shouldFillFormWithPass()
