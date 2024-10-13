@@ -25,7 +25,7 @@ public class FillFormPOMTest extends BaseTest {
         contactUsPage.enterEmailAddress("myemail@o2.pl");
         contactUsPage.attachFile("C:\\Users\\magda\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
         contactUsPage.enterOrderReference("123456");
-        contactUsPage.selectElementsFromDropDownList("customer service");
+        contactUsPage.selectElementsFromDropDownList("Customer service");
         contactUsPage.clickSubmitMessageButton();
         String actualMessage = contactUsVerificationPage.readSuccessfulMessageFromVerificationPage();
         logger.info("Expected mesage: " + expectedMessage);
