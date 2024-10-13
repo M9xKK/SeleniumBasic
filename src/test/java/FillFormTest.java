@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumDriver;
+import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -96,8 +98,18 @@ public class FillFormTest {
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 chromeOptions.addArguments("--disable-search-engine-choice-screen");
-//                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
+                logger.info("Chromer driver initialized properly");
+            }
+            case "chromium" -> {
+                ChromiumOptions chromiumOptions = new ChromiumOptions();
+                WebDriverManager.chromiumdriver().setup();
+                chromiumOptions.addArguments("--start-maximized");
+                chromiumOptions.addArguments("--remote-allow-origins=*");
+                chromiumOptions.addArguments("--disable-search-engine-choice-screen");
+                chromiumOptions.addArguments("--headless");
+                driver = new ChromiumDriver(chromiumOptions);
                 logger.info("Chromer driver initialized properly");
             }
             case "firefox" -> {
