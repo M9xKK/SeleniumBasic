@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ContactUsPage {
-    String path = "C:\\Users\\magda\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt";
     private Logger logger = LoggerFactory.getLogger(ContactUsPage.class);
 
     @FindBy(css="id_contact")
