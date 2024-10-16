@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "browser": "chrome"
+  },
+  "user_settings": {
+    "email": "testemail@test.pl"
+  },
+  "messages": {
+    "numerical_short": "12345678",
+    "numerical_long": "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+    "string_short": "This is a short message!",
+    "string_long_one_line": "This is a long message, this message is very long, because i need to put alot of text in this specific text box, so i had to write this long one-line message!",
+    "string_long_multiple_lines": "This is a long message, \n this message is very long, because i need to put alot of text \n in this specific text box, so i had to write this long \n multi-line message!"
+  }
+}

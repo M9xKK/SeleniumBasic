@@ -1,5 +1,6 @@
 package base;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,6 +14,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class BaseTest {
@@ -20,14 +23,17 @@ public class BaseTest {
     protected static WebDriver driver;
     private final String APP_URL = "http://www.automationpractice.pl/index.php";
     private Logger logger = LoggerFactory.getLogger(BaseTest.class);
+    protected TestData testData;
 
     @BeforeEach
-    void setup() {
+    void setup() throws IOException {
         driver = getDriver();
         driver.get(APP_URL);
         logger.info("URL defined properly");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         logger.info("Timeout set properly to 5 seconds");
+        ObjectMapper objectMapper = new ObjectMapper();
+        testData = objectMapper.readValue(new File("src/test/resources/configuration.json"), TestData.class);
     }
 
     @AfterEach

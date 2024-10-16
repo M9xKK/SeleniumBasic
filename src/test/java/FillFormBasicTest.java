@@ -90,7 +90,7 @@ public class FillFormBasicTest {
         switch(browserName){
             case "chrome" -> {
                 ChromeOptions chromeOptions = new ChromeOptions();
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().forceDownload().setup();
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 chromeOptions.addArguments("--disable-search-engine-choice-screen");

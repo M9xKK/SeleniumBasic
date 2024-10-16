@@ -15,7 +15,6 @@ public class FillFormPOMTest extends BaseTest {
     @Test
     void shouldSendFormWithPOM()
     {
-
         HomePage homePage = new HomePage(driver);
         ContactUsPage contactUsPage = new ContactUsPage(driver);
         CotanctUsVerificationPage contactUsVerificationPage = new CotanctUsVerificationPage(driver);
@@ -23,13 +22,14 @@ public class FillFormPOMTest extends BaseTest {
         homePage.cotanctUsClick();
         contactUsPage.enterMessageInTextArea("Some really long text \n with many lines \n thanks!");
         contactUsPage.enterEmailAddress("myemail@o2.pl");
-        contactUsPage.attachFile("C:\\Users\\magda\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
+        contactUsPage.attachFile("C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
         contactUsPage.enterOrderReference("123456");
         contactUsPage.selectElementsFromDropDownList("Customer service");
         contactUsPage.clickSubmitMessageButton();
         String actualMessage = contactUsVerificationPage.readSuccessfulMessageFromVerificationPage();
         logger.info("Expected mesage: " + expectedMessage);
         logger.info("Actual message: " + actualMessage);
+        logger.info(testData.getSettings().getBrowser());
 
         assertThat(actualMessage).isEqualTo(expectedMessage);
         logger.info("Assertions reslved");
