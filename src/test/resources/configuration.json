@@ -3,7 +3,8 @@
     "browser": "chrome"
   },
   "user_settings": {
-    "email": "testemail@test.pl"
+    "email": "testemail@test.pl",
+    "path" : "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt"
   },
   "messages": {
     "numerical_short": "12345678",

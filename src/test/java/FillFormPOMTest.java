@@ -20,8 +20,8 @@ public class FillFormPOMTest extends BaseTest {
         CotanctUsVerificationPage contactUsVerificationPage = new CotanctUsVerificationPage(driver);
 
         homePage.cotanctUsClick();
-        contactUsPage.enterMessageInTextArea("Some really long text \n with many lines \n thanks!");
-        contactUsPage.enterEmailAddress("myemail@o2.pl");
+        contactUsPage.enterMessageInTextArea(testData.getMessages().getString_short());
+        contactUsPage.enterEmailAddress(testData.getUserSettings().getEmail());
         contactUsPage.attachFile("C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
         contactUsPage.enterOrderReference("123456");
         contactUsPage.selectElementsFromDropDownList("Customer service");

@@ -8,7 +8,6 @@ public class TestData {
     private UserSettings userSettings;
     private Messages messages;
 
-    // Gettery i settery dla TestData
     public Settings getSettings() {
         return settings;
     }
@@ -33,11 +32,9 @@ public class TestData {
         this.messages = messages;
     }
 
-    // Klasa wewnętrzna Settings
     public static class Settings {
         private String browser;
 
-        // Gettery i settery
         public String getBrowser() {
             return browser;
         }
@@ -47,11 +44,10 @@ public class TestData {
         }
     }
 
-    // Klasa wewnętrzna UserSettings
     public static class UserSettings {
         private String email;
+        private String path;
 
-        // Gettery i settery
         public String getEmail() {
             return email;
         }
@@ -59,9 +55,16 @@ public class TestData {
         public void setEmail(String email) {
             this.email = email;
         }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path){
+            this.path = path;
+        }
     }
 
-    // Klasa wewnętrzna Messages
     public static class Messages {
         private String numerical_short;
         private String numerical_long;
@@ -69,7 +72,6 @@ public class TestData {
         private String string_long_one_line;
         private String string_long_multiple_lines;
 
-        // Gettery i settery
         public String getNumerical_short() {
             return numerical_short;
         }
