@@ -1,34 +1,44 @@
 package base;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TestData {
     private Settings settings;
     @JsonProperty("user_settings")
     private UserSettings userSettings;
     private Messages messages;
+    private Logger logger = LoggerFactory.getLogger(TestData.class);
+
 
     public Settings getSettings() {
+        logger.info("Settings loaded!");
         return settings;
     }
 
     public void setSettings(Settings settings) {
         this.settings = settings;
+        logger.info("Settings changed!");
     }
 
     public UserSettings getUserSettings() {
+        logger.info("User settings loaded!");
         return userSettings;
     }
 
     public void setUserSettings(UserSettings userSettings) {
+        logger.info("User settings saved!");
         this.userSettings = userSettings;
     }
 
     public Messages getMessages() {
+        logger.info("Message collected " + messages + " from configuration file");
         return messages;
     }
 
     public void setMessages(Messages messages) {
+        logger.info("Message changed to: " + messages + " !");
         this.messages = messages;
     }
 
