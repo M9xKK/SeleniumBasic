@@ -22,8 +22,8 @@ public class FillFormPOMTest extends BaseTest {
         homePage.cotanctUsClick();
         contactUsPage.enterMessageInTextArea(testData.getMessages().getString_short());
         contactUsPage.enterEmailAddress(testData.getUserSettings().getEmail());
-        contactUsPage.attachFile("C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt");
-        contactUsPage.enterOrderReference("123456");
+        contactUsPage.attachFile(testData.getUserSettings().getPath());
+        contactUsPage.enterOrderReference(testData.getMessages().getNumerical_short());
         contactUsPage.selectElementsFromDropDownList("Customer service");
         contactUsPage.clickSubmitMessageButton();
         String actualMessage = contactUsVerificationPage.readSuccessfulMessageFromVerificationPage();
