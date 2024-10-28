@@ -1,0 +1,57 @@
+env:
+  dev:
+    browser: "chrome"
+    email: "devemail@test.pl"
+    path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test_dev.txt"
+    path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
+
+  test:
+    browser: "firefox"
+    email: "testemail@test.pl"
+    path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test_test.txt"
+    path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
+
+  prod:
+    browser: "chrome"
+    email: "prodemail@test.pl"
+    path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test_prod.txt"
+    path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
+
+# Domyślne argumenty dla przeglądarek
+browser_options:
+  chrome:
+    arguments:
+      - "--start-maximized"
+      - "--remote-allow-origins=*"
+      - "--disable-search-engine-choice-screen"
+      - "--headless"
+  firefox:
+    arguments:
+      - "--start-maximized"
+      - "--headless"
+  edge:
+    arguments:
+      - "--start-maximized"
+      - "--remote-allow-origins=*"
+      - "--headless"
+
+# Domyślne ustawienia dla wszystkich środowisk
+default:
+  browser: "chrome"
+  email: "defaultemail@test.pl"
+  path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt"
+  path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
+
+messages:
+  numerical_short: "12345678"
+  numerical_long: "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+  string_short: "This is a short message!"
+  string_long_one_line: "This is a long message, this message is very long, because i need to put alot of text in this specific text box, so i had to write this long one-line message!"
+  dropdown_select_option_1: "Customer service"
+  dropdown_select_option_2: "Webmaster"
+  dropdown_select_option_default: "-- Choose --"
+  string_long_multiple_lines: |
+    This is a long message, 
+    this message is very long, because i need to put alot of text 
+    in this specific text box, so i had to write this long 
+    multi-line message!
