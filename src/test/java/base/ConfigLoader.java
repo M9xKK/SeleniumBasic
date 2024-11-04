@@ -10,7 +10,7 @@ public class ConfigLoader {
     public static void main(String[] args) {
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            ApplicationConfig appConfig = mapper.readValue(new File("path/to/config.yaml"), ApplicationConfig.class);
+            ApplicationConfig appConfig = mapper.readValue(new File("src/test/resources/configuration.yaml"), ApplicationConfig.class);
 
             // Możesz teraz uzyskać dostęp do wszystkich elementów konfiguracyjnych
             System.out.println(appConfig.getConfig().getEnv().get("dev").getEmail());

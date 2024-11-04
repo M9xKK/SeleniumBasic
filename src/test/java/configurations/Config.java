@@ -30,7 +30,7 @@ public class Config {
         @JsonProperty("path_linux")
         private String pathLinux;
 
-        @JsonProperty("path_widnows")
+        @JsonProperty("path_windows")
         private String pathWindows;
 
         public String getBrowser(){

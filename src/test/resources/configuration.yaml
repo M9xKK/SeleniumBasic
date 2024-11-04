@@ -36,11 +36,11 @@ browser_options:
       - "--headless"
 
 # Domyślne ustawienia dla wszystkich środowisk
-default:
-  browser: "chrome"
-  email: "defaultemail@test.pl"
-  path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt"
-  path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
+#default:
+#  browser: "chrome"
+#  email: "defaultemail@test.pl"
+#  path_windows: "C:\\Users\\peada\\IdeaProjects\\SeleniumBasic\\src\\test\\resources\\test.txt"
+#  path_linux: "/home/peada/IdeaProjects/SeleniumBasic/src/test/resources/test_dev.txt"
 
 messages:
   numerical_short: "12345678"
