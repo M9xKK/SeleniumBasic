@@ -3,12 +3,15 @@ package configurations;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Config {
     private Map<String, Environment> env = new HashMap<>();
+    private Logger logger = LoggerFactory.getLogger(Config.class);
 
     @JsonAnyGetter
     public Map<String, Environment> getEnv() {

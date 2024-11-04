@@ -2,12 +2,16 @@ package configurations;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class BrowserOptions {
     private Map<String, BrowserArguments> options = new HashMap<>();
+    private Logger logger = LoggerFactory.getLogger(BrowserOptions.class);
 
     @JsonAnyGetter
     public Map<String, BrowserArguments> getOptions() {
