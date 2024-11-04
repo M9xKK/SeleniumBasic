@@ -11,7 +11,7 @@ public class Config {
     private Map<String, Environment> env = new HashMap<>();
 
     @JsonAnyGetter
-    public Map<String, Evironment> getEnv() {
+    public Map<String, Environment> getEnv() {
         return env;
     }
 

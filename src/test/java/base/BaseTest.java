@@ -1,6 +1,7 @@
 package base;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import configurations.ApplicationConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,6 +25,7 @@ public class BaseTest {
     private final String APP_URL = "http://www.automationpractice.pl/index.php";
     private Logger logger = LoggerFactory.getLogger(BaseTest.class);
     protected TestData testData;
+    protected ApplicationConfig applicationConfig;
 
     @BeforeEach
     void setup() throws IOException {
@@ -33,7 +35,8 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         logger.info("Timeout set properly to 5 seconds");
         ObjectMapper objectMapper = new ObjectMapper();
-        testData = objectMapper.readValue(new File("src/test/resources/configuration.json"), TestData.class);
+        testData = objectMapper.readValue(new File("src/test/resources/configuration.json"), TestData.class); //Stare rozwiazanie
+        applicationConfig = objectMapper.readValue(new File("src/test/resources/configuration.yaml"), ApplicationConfig.class); //Nowe rozwiazanie
     }
 
     @AfterEach
